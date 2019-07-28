@@ -122,43 +122,40 @@ Pilih Jadwal Film Toy Story:
         print(*dictsched2['malam4'])
 
 def menu ():
-  pilihan = 0
-  while (pilihan <= 3):
-    pilihan += 1
-  print('''
+  pilihan = 1
+  while (pilihan <= 2):
+    print('''
 Menu :
 1. Pesan Tiket
 2. Lihat History
 3. Keluar ''')
-  pilihan = int(input('Tentukan Pilihan : '))
-  if pilihan == 1:
-    print('''
+    pilihan = int(input('Tentukan Pilihan : '))
+    if pilihan == 1:
+      print('''
 List Film :
 1. The Incredibles
 2. Toy Story''')
-    film = int(input('Silahkan Pilih Film : '))
-    if film == 1 :
-      tempatduduk()
-    elif film == 2:
-      tempatduduk1()
-    menu()
-  elif pilihan == 2:
-    if len(dictsched['input1']) == 0 and len(dictsched['input4'])==0:
-      print('')
-    elif len(dictsched['input1']) > 0 or len(dictsched['input4'])>0:
-      for item in range(0,*dictsched['input1']):
-        print('Film The Incredibles Jadwal Siang Seat {} Row {}'.format(dictsched['seat1'][item],dictsched['row1'][item]))
-      for item in range(0,*dictsched['input4']):
-        print('Film The Incredibles Jadwal Malam Seat {} Row {}'.format(dictsched['seat2'][item],dictsched['row2'][item]))
-    if len(dictsched2['input2']) == 0 and len(dictsched2['input3'])==0:
-      print('')
-    elif len(dictsched2['input2']) > 0 or len(dictsched2['input3'])>0:
-      for item in range(0,*dictsched2['input2']):
-        print('Film Toy Story Jadwal Siang Seat {} Row {}'.format(dictsched2['seat3'][item],dictsched2['row3'][item]))
-      for item in range(0,*dictsched2['input3']):
-        print('Film Toy Story Jadwal Malam Seat {} Row {}'.format(dictsched2['seat4'][item],dictsched2['row4'][item]))
-    menu()
-  elif pilihan == 3:
-    print('Terima Kasih!')
+      film = int(input('Silahkan Pilih Film : '))
+      if film == 1 :
+        tempatduduk()
+      elif film == 2:
+        tempatduduk1()
+    elif pilihan == 2:
+      if len(dictsched['input1']) == 0 and len(dictsched['input4'])==0:
+        print('')
+      elif len(dictsched['input1']) > 0 or len(dictsched['input4'])>0:
+        for item in range(0,*dictsched['input1']):
+          print('Film The Incredibles Jadwal Siang Row {} Seat {}'.format(dictsched['row1'][item],dictsched['seat1'][item]))
+        for item1 in range(0,*dictsched['input4']):
+          print('Film The Incredibles Jadwal Malam Row {} Seat {}'.format(dictsched['row2'][item],dictsched['seat2'][item]))
+      if len(dictsched2['input2']) == 0 and len(dictsched2['input3'])==0:
+        print('')
+      elif len(dictsched2['input2']) > 0 or len(dictsched2['input3'])>0:
+        for item in range(0,*dictsched2['input2']):
+          print('Film Toy Story Jadwal Siang Row {} Seat {}'.format(dictsched2['row3'][item],dictsched2['seat3'][item]))
+        for item in range(0,*dictsched2['input3']):
+          print('Film Toy Story Jadwal Malam Row {} Seat {}'.format(dictsched2['row4'][item],dictsched2['seat4'][item]))
+    elif pilihan == 3:
+      print('Terima Kasih!')
       
 menu()
